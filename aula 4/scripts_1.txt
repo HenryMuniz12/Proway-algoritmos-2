@@ -1,0 +1,47 @@
+
+
+-- para selecionar linhas em uma tabela ultilizar o comanda SELECT 
+-- depois nos nomes das colunas separados por uma VIRGULA, mas se quiser todas  basta colocar * 
+--from + nome de tabela que é aliva da busca 
+
+select * from pessoas;
+
+
+select * from pessoas ;
+    where 
+    idade <=18
+ 
+
+--para fazer buscas parcisas por texto ultilizo LiKE "%valor%"
+select * from pessoas
+    where
+    nome like  "%Pessoa%" 
+
+
+--para fazer buscas que começa com TAL valor ultilizo like "Valor%"
+select * from pessoas
+    where
+    nome like "P%"
+
+
+--para fazer buscas que termina com TAL valor ultilizo like "%Valor"
+select * from pessoas
+    where 
+    nome like "%o"
+
+
+select * from pessoas
+where 
+    nome like "P%"
+    and idade <= 20
+
+
+select 
+    nome,
+    id,
+    idade 
+    from pessoas
+where
+idade =10
+
+
