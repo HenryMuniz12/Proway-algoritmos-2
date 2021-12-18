@@ -1,0 +1,37 @@
+insert into series (nome,ano,genero,diretor) values ("Titans",2021,"Terror","Henry");
+
+select genero, count (*) from series
+where
+ano = 2020;
+
+select genero,count (*) from series
+group by genero 
+;
+
+select * from episodios;
+
+select * from series as se
+left join episodios as ep on ep.serie_id = se.id
+where se.id=2
+order by ep.sequencia desc;
+
+select * from series as se 
+left join episodios as ep on ep.serie_id = se.id
+order by se.nome asc ,ep.sequencia desc
+;
+
+-- para fazer contagens ou (agrupadores) é necessario informar quais campos se repetem 
+-- e esses campos devem ser os unicos present no select 
+--os demais campos são os de agrupamnetos com (count,sum)
+-- os campos mencionados no slect devem existir no GROUP BY
+select
+se.nome,
+count (*)
+from series as se 
+left join episodios as ep on ep.serie_id = se.id
+group by se.nome 
+
+-- para colsutas vom CONTAGEM ou agrupadores não devo usar left pois
+--sempre que falta o relacionamento é gerado no minimo UM LINHA vazia
+--que não configura relacionamento 
+
