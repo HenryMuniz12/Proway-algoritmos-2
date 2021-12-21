@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=sc, initial-scale=1.0">
+    <title>Orientação a objetos - Herança</title>
+</head>
+
+<body>
+
+    <a href="/herenca.html">Vai pra herança</a>
+
+    <script>
+        console.log("Funcionou");
+
+        //aluno
+        //nome,idade,matricula
+        //meApresentar
+
+        //professor
+        //nome,idade,qtdAlunos
+        //meApresentar()
+
+        class Aluno {
+            //atribudutos da classe Aluno
+            nome
+            idade
+            matricula
+
+            //Contrutor ultilizado no new que recebe os parametros para inicializar
+            //os atributos no novo objeto do tipo aluno 
+            constructor(nome, idade, matricula) {
+                //para cada paramaetro inicializando respectivamente o atibuto do objeto 
+                //o (this.) é ultilzado para respectivamente o atributo do objeto 
+                //isso ajuda a não confundir parametro com atributo 
+                this.nome = nome
+                this.idade = idade
+                this.matricula = matricula
+
+            }
+
+            meApresentar() {
+                return "Ola meu nome é " + this.nome + " tenho " + this.idade + " anos e minha matricula é " + this.matricula
+            }
+
+        }
+        //intanciando um objto da classe Aluno na variavel aluno1
+        //passando para o contrutor os parametros, dessa forma inicializando seus atributos 
+        let aluno1 = new Aluno("Rubem", 32, "rubem.oliota")
+
+        //criando uma variavel do tipo vetor para armazenar valores do tipo Aluno
+        //[] é o operador para listas
+        let alunos = []
+
+        //variavel de lista .push é ultilizado para inserir um item no final da lista 
+        //passando por parametro o item a ser inserido 
+        alunos.push(aluno1)
+
+        //verificando como esta a variavel de lista no momento em LOG
+        console.log(alunos);
+
+        //não preciso criar uma variavel para inserir a variavel na lista
+        //o new me devolve um objeto da classe Aluno
+        //é como um return porém o contrutor não precisa informar que retorna um objeto 
+        //isso é padrão de orientação a objetos 
+        alunos.push(new Aluno("Oliota", 32, "oliota.01"))
+        console.log(alunos);
+
+        alunos.push(new Aluno("Teste", 18, "Teste.001"))
+
+        let aluno2 = new Aluno("Aluno", 22, "aluno.02")
+
+        alunos.push(aluno2)
+        console.log(alunos);
+
+        //criando umas variavel que recebe o nome do primeiro aluno na lista de primeiros alunos 
+        //para acessar uma posicao especifica na lista devo informar nos [indice] e isso me retorna o valor
+        //que esta nesse indice, como é um objeto do tipo aluno ultilizo (.) parra acessar um atributo especifico 
+        let primeiro_aluno = alunos[0].nome
+        console.log(primeiro_aluno);
+
+        //acesando a idade do segundo aluno na lista de alunos e exibindo em LOG
+        console.log(alunos[1].idade);
+
+        //acessando o ultilizando aluno e atulizando o valor do atributo nome
+        alunos[0].nome = "Rubem (editado)"
+
+        // for é um laço  de repetição melhor ultilizado quanto sabemos a quatidade de repetições 
+        //com base em um contador
+        //1 uma variavel temporaria com o valor inicial 
+        // 2 comparar  a variavel temporaria com algum valor que limite a repitição 
+        //3 incremento, de quanto em quando o contador mudará de valor
+        for (let contador = 0; contador < alunos.length; contador++) {
+            //acessar o nome do aluno para cada laço de reptição 
+            console.log(alunos[contador].nome);
+
+//percorer a lista de alunos e mostrar de forma invertida as matriculas dos alunos
+for (let contador=alunos.length;contador>=1;contador--){
+console.log(alunos [contador-1].matricula);
+
+}
+
+ }
+    </script>.
+
+</body>
+
+</html>
